@@ -1,0 +1,50 @@
+{
+ "header": {
+    "contactLink": "Contact"
+  },
+  "airlines": {
+    "emptyData": "Data is empty...",
+    "buyButton": "Buy",
+    "column1Name": "Flight From",
+    "column2Name": "Flight Date",
+    "column3Name": "Destination",
+    "column4Name": "Back Date"
+  },
+  "common": {
+    "submit": "Search",
+    "cancel": "Cancel",
+    "accept": "Book"
+  },
+  "modal": {
+    "header": "Book Flight",
+    "columns" : {
+      "cityFrom": "Flight From",
+      "cityTo": "Destination",
+      "startDate": "Flight Date",
+      "endDate": "Back Date",
+      "price": "Price"
+    }
+  },
+  "reservation": {
+    "header": "Search My Reservation",
+    "columns": {
+      "bookingNumber": "Booking Number",
+      "owner": "Owner",
+      "passengers": "Passengers",
+      "flightFrom": "Flight From",
+      "flightDate": "Flight Date",
+      "destination": "Destination",
+      "backDate": "Back Date",
+      "payment": "Payment"
+    }
+  },
+  "contact": {
+    "header" : "GET IN TOUCH",
+    "help": "24 Hour Booking And Customer Services",
+    "servicePhone": "+90 212 444 0 849",
+    "name": "FLAIR Airlines",
+    "address": "15-001 Białystok",
+    "phone": "Phone: +90 212 463 63 63",
+    "fax": "Fax: +90 212 465 21 21"
+  }
+}

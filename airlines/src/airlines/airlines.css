@@ -1,0 +1,105 @@
+body {
+  font-family: monospace;
+}
+
+.fligths-search {
+  margin: auto;
+  width: 80%;
+  height: 100%;
+}
+
+.fligths-search form {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 20px 0px;
+}
+
+.fligths-search button.submit, .reservation-search .search-form .btn.submit {
+  width: 130px;
+  height: 28px;
+  padding: 0px;
+  margin-left: auto;
+  color: snow;
+  background: #2C2F75;
+  cursor: pointer;
+  text-shadow: 0px 0px 10px #8C2149;
+}
+
+.fligths-search .input-field input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 96%;
+  height: 25px;
+  padding: 0px;
+  margin: 0px;
+  padding-left: 5px;
+  border-color: #2C2F75;
+  font-size: 16px;
+  font-family: monospace;
+  border-width: 1px;
+}
+
+.fligths-search .input-field input[type='date'] {
+  cursor: text;
+}
+
+.fligths-search .input-field input::placeholder, .fligths-search .input-field input:valid {
+  color: #8C2149;
+}
+
+.flights-table {
+  margin: auto;
+  width: 80%;
+  margin-top: 26px;
+}
+
+.flights-table .results-table {
+  margin: auto;
+  font-size: 20px;
+}
+
+.flights-table .results-table tbody tr {
+  line-height: 60px;
+}
+
+.flights-table .results-table .btn.buy {
+  width: 50px;
+  padding: 0px;
+  height: 30px;
+  background: #8C2149;
+  color: snow;
+  border-color: #2C2F75;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn {
+  text-transform: uppercase;
+  color: snow;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 10px;
+}
