@@ -1,6 +1,12 @@
 import * as actions from './../setup/actions'
-// import axios from 'axios'
+import axios from 'axios'
+import config from './../setup/config'
 
+const {
+  base,
+  reservations
+} = config.api
+const reservationEndpoint = `${base}${reservations}`
 const getFlightDetailsAction = data => ({
   type: actions.GET_FLIGHT_DETAILS,
   payload: data
@@ -19,13 +25,13 @@ export const getTicket = data => dispatch => {
   return dispatch(getTicketAction(data))
 }
 
-// const buyFlight = data => {
-//   const url = ''
-//   return axios.post(url, data)
-//     .then(response => console.log('OK'))
-//     .catch(() => console.log('errrrrrorx'))
-// }
+const buyFlight = data => {
+  return axios.post(reservationEndpoint, data)
+    .then(response => console.log('OK'))
+    .catch(() => console.log('errrrrrorx'))
+}
 
 export const buyTicket = data => dispatch => {
-  return dispatch(getTicketAction(data))
+  dispatch(getTicketAction(data))
+  return buyFlight(data)
 }

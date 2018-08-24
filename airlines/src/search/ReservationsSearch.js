@@ -7,16 +7,6 @@ import {Button} from 'react-bootstrap'
 import ReservationsSearchTable from './ReservationsSearchTable'
 import {getReservation} from './ReservationsActions'
 
-const data = {
-  'bookingNumber': '37850088199',
-  'owner': 'Ashton Sanchez',
-  'passengers': ['Clayton', 'Ramona', 'Nina', 'Candace'],
-  'flightFrom': 'Stirling',
-  'flightDate': '08.09.18',
-  'destination': 'Warrnambool',
-  'backDate': '09.14.18',
-  'payment': 6757
-}
 
 class ReservationsSearch extends React.Component {
   constructor () {
@@ -30,14 +20,9 @@ class ReservationsSearch extends React.Component {
   }
 
   showReservationDetails () {
-    if (Object.keys(data).length !== 0) {
-      this.setState(prevState => ({displayReservation: !prevState.displayReservation}))
-      const id = this.refs.reservationIndex.value
-      console.log(id)
-      // this.props.getReservation(id)
-    } else {
-      window.alert('Nie ma takej rezerwacji')
-    }
+    this.setState(prevState => ({displayReservation: !prevState.displayReservation}))
+    const id = this.refs.reservationIndex.value
+    this.props.getReservation(id)
   }
 
   render () {
@@ -63,7 +48,7 @@ class ReservationsSearch extends React.Component {
             </Button>
           </div>
           {displayReservation
-            ? (<ReservationsSearchTable data={data} />)
+            ? (<ReservationsSearchTable data={this.props.reservation}/>)
             : null
           }
         </div>
@@ -76,4 +61,8 @@ ReservationsSearch.propTypes = {
   getReservation: PropTypes.func
 }
 
-export default connect(null, {getReservation})(ReservationsSearch)
+const mapStateToProps = state => ({
+  reservation: state.ticket.flightDetails
+})
+
+export default connect(mapStateToProps, {getReservation})(ReservationsSearch)

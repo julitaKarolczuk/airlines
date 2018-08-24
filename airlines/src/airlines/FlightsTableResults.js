@@ -83,9 +83,9 @@ FlightsResultTable.defaultProps = {
   data: []
 }
 
-// FlightsResultTable.propTypes = {
-//   columns: PropTypes.array,
-//   data: PropTypes.array
-// }
+FlightsResultTable.propTypes = {
+  columns: PropTypes.array,
+  data: PropTypes.array
+}
 
 export default FlightsResultTable

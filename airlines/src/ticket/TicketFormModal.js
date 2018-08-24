@@ -12,16 +12,27 @@ class TicketFormModal extends React.Component {
     super()
 
     this.onSubmit = this.onSubmit.bind(this)
+    this.renderColumn = this.renderColumn.bind(this)
   }
 
   onSubmit (values) {
     this.props.buyTicket(values)
   }
 
+  renderColumn ([key, value], index) {
+    const { flightDetails } = this.props
+    return (
+      <p
+        key={`col-${index}`}
+      >
+        {`${value}: ${flightDetails[key]}`}
+      </p>
+    )
+  }
+
   render () {
     const columns = Object.entries(messages.modal.columns)
     const {
-      flightDetails,
       closeModal
     } = this.props
     return (
@@ -42,13 +53,7 @@ class TicketFormModal extends React.Component {
             </div>
             <div className='flight-details'>
               {
-              columns.map(([key, value], index) =>
-                <p
-                  key={`col-${index}`}
-                >
-                  {`${value}: ${flightDetails[key]}`}
-                </p>
-              )
+              columns.map(this.renderColumn)
             }
             </div>
           </Modal.Body>

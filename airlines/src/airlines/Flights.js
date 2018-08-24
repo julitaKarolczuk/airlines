@@ -4,8 +4,10 @@ import {connect} from 'react-redux'
 import FlightsSearch from './FlightsSearch'
 import FlightsTable from './FlightsTable'
 import {
-  getFlights
+  getFlights,
+  getSearchingFlights
 } from './FlightsActions'
+import config from './../setup/config'
 
 class Flights extends React.Component {
 
@@ -15,7 +17,19 @@ class Flights extends React.Component {
   }
 
   onSubmit (values) {
-    this.props.getFlights(values)
+    const {
+      dateFrom,
+      dateTo,
+      cityFrom,
+      cityTo
+    } = config.params
+    const params = {
+      dateFrom: values.startDate,
+      dateTo: values.endDate,
+      cityTo: values.cityTo,
+      cityFrom: values.cityFrom
+    }
+    this.props.getSearchingFlights(params)
   }
 
   componentDidMount () {
@@ -38,5 +52,6 @@ Flights.propTypes = {
 }
 
 export default connect(null, {
-  getFlights
+  getFlights,
+  getSearchingFlights
 })(Flights)

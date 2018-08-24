@@ -7,13 +7,15 @@ const ReservationsSearchTable = props => {
   const data = props.data
   return (
     <div className='reservation-search-results'>
-      {
-        columns.map(([key, value], index) =>
+      {JSON.stringify(data) !== '{}' ? (
+        columns.map(([key, value], index) => (
           <p
             key={`col-${index}`}
           >
             {`${value}: ${data[key]}`}
           </p>
+        ))) : (
+          <p>{messages.airlines.emptyData}</p>
         )
       }
     </div>

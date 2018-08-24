@@ -3,8 +3,11 @@ import axios from 'axios'
 import config from './../setup/config'
 
 const {
-  reservation
+  base,
+  reservations
 } = config.api
+
+const reservationEndpoint = `${base}${reservations}`
 
 const getReservationAction = data => ({
   type: actions.GET_RESERVATION,
@@ -12,7 +15,8 @@ const getReservationAction = data => ({
 })
 
 const fetchReservation = id => {
-  return axios.get(reservation, id)
+  return axios.get(reservationEndpoint, id)
+    .then(response => response.data)
 }
 
 export const getReservation = id => dispatch => {

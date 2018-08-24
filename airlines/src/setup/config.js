@@ -1,5 +1,13 @@
 export default {
   api: {
-    flights: 'http://kkcode-airlines.azurewebsites.net/api/flights'
+    base: 'http://julitex.gear.host/api/',
+    flights: 'flights/',
+    reservations: 'bookings/'
+  },
+  params: {
+    dateFrom: 'dateFrom',
+    dateTo: 'dateTo',
+    cityTo: 'cityTo',
+    cityFrom: 'cityFrom',
   }
 }

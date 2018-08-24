@@ -20,8 +20,8 @@
     "columns" : {
       "cityFrom": "Flight From",
       "cityTo": "Destination",
-      "startDate": "Flight Date",
-      "endDate": "Back Date",
+      "startDateString": "Flight Date",
+      "endDateString": "Back Date",
       "price": "Price"
     }
   },

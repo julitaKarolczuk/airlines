@@ -31,7 +31,7 @@ class FlightsTableConfig extends React.Component {
         renderCell (data) {
           return (
             <span>
-              {data.startDate}
+              {data.startDateString}
             </span>
           )
         }
@@ -55,7 +55,7 @@ class FlightsTableConfig extends React.Component {
         renderCell (data) {
           return (
             <span>
-              {data.endDate}
+              {data.endDateString}
             </span>
           )
         }
