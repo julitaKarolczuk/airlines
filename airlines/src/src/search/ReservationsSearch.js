@@ -4,8 +4,9 @@ import {connect} from 'react-redux'
 import messages from '../setup/message.json'
 import './reservations.css'
 import {Button} from 'react-bootstrap'
-import ReservationsSearchList from './ReservationsSearchList'
+import ReservationsSearchTable from './ReservationsSearchTable'
 import {getReservation} from './ReservationsActions'
+
 
 class ReservationsSearch extends React.Component {
   constructor () {
@@ -25,11 +26,27 @@ class ReservationsSearch extends React.Component {
   }
 
   render () {
-    const displayReservation = this.state.displayReservation
+    const {
+      displayReservation
+    } = this.state
+
+    const {
+      reservation: {
+        header
+      },
+      common: {
+        submit
+      }
+    } = messages
+
+    const {
+      reservation
+    } = this.props.reservation
+
     return (
       <div className='reservation-search'>
         <h1>
-          {messages.reservation.header}
+          {header}
         </h1>
         <div className='search-content'>
           <div className='search-form'>
@@ -43,12 +60,13 @@ class ReservationsSearch extends React.Component {
               className='submit'
               onClick={this.showReservationDetails}
             >
-              {messages.common.submit}
+              {submit}
             </Button>
           </div>
           {displayReservation
-            ? (<ReservationsSearchList data={this.props.reservation} />)
-            : null
+            ? (
+              <ReservationsSearchTable data={reservation}/>
+            ) : null
           }
         </div>
       </div>
@@ -57,12 +75,11 @@ class ReservationsSearch extends React.Component {
 }
 
 ReservationsSearch.propTypes = {
-  getReservation: PropTypes.func,
-  reservation: PropTypes.object
+  getReservation: PropTypes.func
 }
 
 const mapStateToProps = state => ({
   reservation: state.ticket.flightDetails
 })
 
-export default connect(mapStateToProps, {getReservation})(ReservationsSearch)
+export default connect(mapStateToProps, { getReservation })(ReservationsSearch)

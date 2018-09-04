@@ -7,6 +7,7 @@ import {
   getFlights,
   getSearchingFlights
 } from './FlightsActions'
+import config from './../setup/config'
 
 class Flights extends React.Component {
 
@@ -16,6 +17,12 @@ class Flights extends React.Component {
   }
 
   onSubmit (values) {
+    const {
+      dateFrom,
+      dateTo,
+      cityFrom,
+      cityTo
+    } = config.params
     const params = {
       dateFrom: values.startDate,
       dateTo: values.endDate,
@@ -41,7 +48,7 @@ class Flights extends React.Component {
 
 Flights.propTypes = {
   getFlights: PropTypes.func,
-  getSearchingFlights: PropTypes.func
+  getSerchingFlights: PropTypes.func
 }
 
 export default connect(null, {
