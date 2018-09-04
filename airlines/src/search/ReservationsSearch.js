@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import messages from '../setup/message.json'
 import './reservations.css'
-import {Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import ReservationsSearchList from './ReservationsSearchList'
-import {getReservation} from './ReservationsActions'
+import { getReservation } from './ReservationsActions'
 
 class ReservationsSearch extends React.Component {
   constructor () {
