@@ -17,6 +17,7 @@ class TicketFormModal extends React.Component {
 
   onSubmit (values) {
     this.props.buyTicket(values)
+      .then(this.props.closeModal())
   }
 
   renderColumn ([key, value], index) {

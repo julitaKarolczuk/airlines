@@ -27,7 +27,9 @@ export const getTicket = data => dispatch => {
 
 const buyFlight = data => {
   return axios.post(reservationEndpoint, data)
-    .then(response => console.log('OK'))
+    .then(({responseData}) => {
+      return responseData
+    })
     .catch(() => console.log('errrrrrorx'))
 }
 

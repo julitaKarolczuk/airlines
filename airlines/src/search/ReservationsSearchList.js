@@ -5,18 +5,20 @@ import PropTypes from 'prop-types'
 const ReservationsSearchList = props => {
   const columns = Object.entries(messages.reservation.columns)
   const data = props.data
+
   return (
     <div className='reservation-search-results'>
-      {JSON.stringify(data) !== '{}' ? (
-        columns.map(([key, value], index) => (
-          <p
-            key={`col-${index}`}
-          >
-            {`${value}: ${data[key]}`}
-          </p>
-        ))) : (
-          <p>{messages.airlines.emptyData}</p>
-        )
+      {JSON.stringify(data) !== '{}'
+        ? (
+          columns.map(([key, value], index) => (
+            <p
+              key={`col-${index}`}
+            >
+              {`${value}: ${data[key]}`}
+            </p>
+          ))) : (
+            <p>{messages.airlines.emptyData}</p>
+          )
       }
     </div>
   )
