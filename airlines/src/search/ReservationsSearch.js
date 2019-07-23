@@ -66,3 +66,7 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, {getReservation})(ReservationsSearch)
+
+export {
+  ReservationsSearch
+}

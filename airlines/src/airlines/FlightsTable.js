@@ -30,6 +30,7 @@ class FlightsTable extends React.Component {
 
   render () {
     const isVisible = this.state.isVisible
+
     return (
       <div className='flights-table'>
         <FlightsTableConfig
@@ -49,15 +50,19 @@ class FlightsTable extends React.Component {
   }
 }
 
-// FlightsTable.propTypes = {
-//   flights: PropTypes.array,
-//   getFlightDetails: PropTypes.func,
-//   flightDetails: PropTypes.object
-// }
+FlightsTable.propTypes = {
+  flights: PropTypes.array,
+  getFlightDetails: PropTypes.func,
+  flightDetails: PropTypes.object
+}
 
 const mapStateToProps = state => ({
   flights: state.flights.results, // with data from endpoints -> .data,
   flightDetails: state.ticket.flightDetails
 })
 
-export default connect(mapStateToProps, {getFlightDetails})(FlightsTable)
+export default connect(mapStateToProps, { getFlightDetails })(FlightsTable)
+
+export {
+  FlightsTable
+}

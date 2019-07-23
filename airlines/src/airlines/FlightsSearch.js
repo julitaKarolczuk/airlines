@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Field, reduxForm } from 'redux-form'
 import InputField from '../common/InputField'
-import {Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import messages from './../setup/message.json'
 
 class FlightsSearch extends Component {
@@ -11,6 +11,7 @@ class FlightsSearch extends Component {
       handleSubmit,
       onSubmit
     } = this.props
+
     return (
       <div className='fligths-search'>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -62,3 +63,7 @@ FlightsSearch.propTypes = {
 export default reduxForm({
   form: 'searchFlights'
 })(FlightsSearch)
+
+export {
+  FlightsSearch
+}
